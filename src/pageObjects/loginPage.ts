@@ -32,6 +32,8 @@ export class LoginPage extends BasePage {
 
   async verifyErrorMessage() {
     await this.verifyElementVisible(this.errorMessage);
-    await expect(this.errorMessage).toHaveText(ErrorMessage.INVALID_CREDENTIALS);
+    await expect(this.errorMessage).toHaveText(
+      ErrorMessage.INVALID_CREDENTIALS
+    );
   }
 }
