@@ -1,13 +1,16 @@
 {
-  "name": "greenbone",
+  "name": "Sauce-Demo",
   "version": "1.0.0",
-  "description": "coding challenge",
+  "description": "greenbone coding challenge",
   "license": "ISC",
   "author": "Vignesh",
   "scripts": {
     "build": "npx tsc -p tsconfig.json",
     "test": "npx playwright test",
     "test-ui": "npx playwright test --ui",
+    "test-chrome": "  npx playwright test --project=chromium",
+    "test-firefox": "npx playwright test --project=firefox",
+    "test-webkit": "npx playwright test --project=webkit",
     "report": "npx playwright show-report",
     "format": "npx prettier --write .",
     "docker-build": "docker build -t greenbone .",
