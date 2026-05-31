@@ -102,6 +102,7 @@ Please follow the practices when contributing to this project.
 # FUTURE PLANS
 
 - Playwright-BDD (Based on project need)
+- Parallel test execution as the test suite grows
 - Allure Reports
 - Visual testing
 - Lighthouse check as part of CI pipeline
