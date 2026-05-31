@@ -15,7 +15,7 @@ export abstract class BasePage {
 
   async verifyPageTitle(expectedTitle: string) {
     const actualTitle = await this.page.title();
-    expect(actualTitle).toBe(expectedTitle);
+    await expect(actualTitle).toBe(expectedTitle);
   }
 
   async verifyElementClickable(locator: Locator) {

@@ -19,7 +19,7 @@ export class CheckoutStepTwoPage extends BasePage {
 
   async verifyProductInCart(productName: string) {
     const product = this.inventoryItemName.filter({ hasText: productName });
-    expect(product).toBeVisible();
+    await expect(product).toBeVisible();
   }
 
   async clickFinishButton() {
