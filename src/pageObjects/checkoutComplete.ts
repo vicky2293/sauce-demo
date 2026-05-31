@@ -1,13 +1,11 @@
 import { Page, Locator, expect } from '@playwright/test';
 import { BasePage } from './basePage';
 import { Constants } from '../utils/constants';
+import { SuccessMessage } from '../utils/successMessage';
 
 export class CheckoutCompletePage extends BasePage {
   private readonly completeHeader: Locator;
   private readonly completeText: Locator;
-
-  private static readonly successMessage = "Thank you for your order!";
-  private static readonly successTextMessage = "Your order has been dispatched, and will arrive just as fast as the pony can get there!";
 
   constructor(page: Page) {
     super(page);
@@ -27,7 +25,7 @@ export class CheckoutCompletePage extends BasePage {
     const headerText = await this.getElementText(this.completeHeader);
     const completeText = await this.getElementText(this.completeText);
 
-    expect(headerText).toBe(CheckoutCompletePage.successMessage);
-    expect(completeText).toBe(CheckoutCompletePage.successTextMessage);
+    expect(headerText).toBe(SuccessMessage.successMessage);
+    expect(completeText).toBe(SuccessMessage.successTextMessage);
   }
 }
