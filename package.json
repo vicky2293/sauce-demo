@@ -9,7 +9,9 @@
     "test": "npx playwright test",
     "test-ui": "npx playwright test --ui",
     "report": "npx playwright show-report",
-    "format": "npx prettier --write ."
+    "format": "npx prettier --write .",
+    "docker-build": "docker build -t greenbone .",
+    "docker-run": "docker run -p 3000:3000 greenbone"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
