@@ -45,4 +45,8 @@ export abstract class BasePage {
   async verifyTitle(expectedTitle: string) {
     await expect(this.title).toHaveText(expectedTitle);
   }
+
+  async getElementText(locator: Locator) {
+    return await locator.textContent();
+  }
 }
