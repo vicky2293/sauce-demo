@@ -5,7 +5,10 @@
   "license": "ISC",
   "author": "Vignesh",
   "scripts": {
-    "build": "npx tsc -p tsconfig.json"
+    "build": "npx tsc -p tsconfig.json",
+    "test": "npx playwright test",
+    "test-ui": "npx playwright test --ui",
+    "report": "npx playwright show-report"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
