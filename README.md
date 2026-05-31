@@ -9,6 +9,24 @@ Playwright Automation for SauceDemo application
 - Node.js
 - Visual Studio Code
 
+## Project Structure
+
+This framework follows the POM (Page Object Model) design pattern with reusable fixtures and utilities.
+
+```
+|-- .github/workflows/       # CI workflow
+|-- src/
+|  |-- fixtures/             # Shared fixtures
+|  |-- pageObjects/          # Page Object classes
+|  |-- test/                 # Test cases
+|  |-- utils/                # Helper data
+|-- docker-compose.yml       # Docker compose
+|-- dockerfile               # Docker image build
+|-- package.json             # Package manager
+|-- playwright.config.ts     # Playwright configuration
+|-- README.md                # Project documentation
+```
+
 ## Installation
 
 - Source code is available at - [GitHub - sauce-demo](https://github.com/vicky2293/sauce-demo)
@@ -56,3 +74,34 @@ Tests can be executed against different browsers, to run in specific browser
 
 - This project is integrated with Sonarcloud for quality check
 - Sonarcloud: [Sonarcloud Report](https://sonarcloud.io/summary/overall?id=vicky2293_sauce-demo&branch=main)
+
+## Contribution Guidelines
+
+Please follow the practices when contributing to this project.
+
+- Make sure to include `--save-dev` while installing new dependencies.
+- Always follow Page Object Model(POM).
+- Incase a new test needs extra new page, create a seperate page object.
+- Make sure to include the new page class in the `fixture.ts`.
+- Always maintain the constants separately, this will ease the maintenance.
+- Make sure the locators are stable by checking them in pick locator tool.
+- Always store sensitive details in the `.env` file and add it to the `.gitignore` file.(I've included it just for demo purpose).
+- Always try to reuse the methods from the BasePage.
+- Always run `npm run format` before every commit.
+- Make sure the test executes perfectly on all expected browser before commiting and raising Pull Request.
+- Always make sure there are no code smells and maintain Sonar quality standards.
+- Any important note must be added to README.md.
+- Sometimes it will be difficult to reproduce the ci failure locally. In that case try to execute the tests in docker.
+
+### For Github
+- Now the code is in `main` branch.
+- Create a new branch with your changes.
+- Commit and push the changes.
+- Create a new Pull Request for review.
+
+# FUTURE PLANS
+
+- Playwright-BDD (Based on project need)
+- Allure Reports
+- Visual testing
+- Lighthouse check as part of CI pipeline
