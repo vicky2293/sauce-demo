@@ -1,6 +1,6 @@
 import { Page, Locator, expect } from '@playwright/test';
 import { BasePage } from './basePage';
-import { ErrorMessage } from "../utils/errorMessage";
+import { ErrorMessage } from '../utils/errorMessage';
 
 export class LoginPage extends BasePage {
   private readonly usernameInput: Locator;
@@ -8,7 +8,6 @@ export class LoginPage extends BasePage {
   private readonly loginButton: Locator;
   private readonly loginLogo: Locator;
   private readonly errorMessage: Locator;
-
 
   constructor(page: Page) {
     super(page);

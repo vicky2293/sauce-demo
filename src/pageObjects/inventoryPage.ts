@@ -16,8 +16,8 @@ export class InventoryPage extends BasePage {
   }
 
   async addToCartButton(product: string) {
-  const productName = product.toLowerCase().replace(/\s/g, '-');
-  const addToCartButton = this.page.locator(
+    const productName = product.toLowerCase().replace(/\s/g, '-');
+    const addToCartButton = this.page.locator(
       `[data-test="add-to-cart-${productName}"]`
     );
     await this.verifyElementVisible(addToCartButton);

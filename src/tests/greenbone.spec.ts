@@ -3,13 +3,24 @@ import { Constants } from '../utils/constants';
 import { CheckoutData } from '../utils/checkoutData';
 
 test.describe('greenbone assignment', () => {
-  test('Verify whether the `standard_user` is able to log in with valid credentials.', async ({loginPage, inventoryPage}) => {
+  test('Verify whether the `standard_user` is able to log in with valid credentials.', async ({
+    loginPage,
+    inventoryPage,
+  }) => {
     await loginPage.visitLoginPage();
     await loginPage.login(Constants.VALID_USERNAME, Constants.VALID_PASSWORD);
     await inventoryPage.verifyInventoryPage();
   });
 
-  test('Verify whether the `standard_user` is able to place an order successfully with valid details.', async ({loginPage, inventoryPage, cartPage, checkoutStepOnePage, checkoutStepTwoPage, checkoutCompletePage, commonPage}) => {
+  test('Verify whether the `standard_user` is able to place an order successfully with valid details.', async ({
+    loginPage,
+    inventoryPage,
+    cartPage,
+    checkoutStepOnePage,
+    checkoutStepTwoPage,
+    checkoutCompletePage,
+    commonPage,
+  }) => {
     await test.step('visit saucedemo webpage', async () => {
       await loginPage.visitLoginPage();
       await loginPage.login(Constants.VALID_USERNAME, Constants.VALID_PASSWORD);
@@ -31,7 +42,11 @@ test.describe('greenbone assignment', () => {
     });
 
     await test.step('fill checkout information', async () => {
-      await checkoutStepOnePage.fillCheckoutForm(CheckoutData.FIRST_NAME, CheckoutData.LAST_NAME, CheckoutData.ZIP_CODE);
+      await checkoutStepOnePage.fillCheckoutForm(
+        CheckoutData.FIRST_NAME,
+        CheckoutData.LAST_NAME,
+        CheckoutData.ZIP_CODE
+      );
       await checkoutStepOnePage.clickContinueButton();
       await checkoutStepTwoPage.verifyCheckoutStepTwoPage();
     });
@@ -44,15 +59,20 @@ test.describe('greenbone assignment', () => {
     });
 
     await test.step('verify order confirmation', async () => {
-    await checkoutCompletePage.verifyCheckoutPage();
-    await checkoutCompletePage.verifySuccessMessage();
-    await commonPage.logout();
+      await checkoutCompletePage.verifyCheckoutPage();
+      await checkoutCompletePage.verifySuccessMessage();
+      await commonPage.logout();
     });
   });
 
-  test('Verify whether the user is not able to login with invalid credentials.', async ({loginPage}) => {
+  test('Verify whether the user is not able to login with invalid credentials.', async ({
+    loginPage,
+  }) => {
     await loginPage.visitLoginPage();
-    await loginPage.login(Constants.INVALID_USERNAME, Constants.INVALID_PASSWORD);
+    await loginPage.login(
+      Constants.INVALID_USERNAME,
+      Constants.INVALID_PASSWORD
+    );
     await loginPage.verifyErrorMessage();
   });
 });
