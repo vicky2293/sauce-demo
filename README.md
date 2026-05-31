@@ -55,4 +55,4 @@ Tests can be executed against different browsers, to run in specific browser
 ## SonarQube
 
 - This project is integrated with Sonarcloud for quality check
-- Sonarcloud: [Sonarcloud Report](https://sonarcloud.io/summary/overall?id=vicky2293_Sauce-Demo&branch=main)
+- Sonarcloud: [Sonarcloud Report](https://sonarcloud.io/summary/overall?id=vicky2293_sauce-demo&branch=main)
