@@ -8,4 +8,7 @@ export class Constants {
 
   static readonly VALID_USERNAME = process.env.VALID_USERNAME!;
   static readonly VALID_PASSWORD = process.env.VALID_PASSWORD!;
+
+  static readonly INVALID_USERNAME = process.env.INVALID_USERNAME!;
+  static readonly INVALID_PASSWORD = process.env.INVALID_PASSWORD!;
 }

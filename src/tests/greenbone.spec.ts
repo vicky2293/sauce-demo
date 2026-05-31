@@ -49,4 +49,10 @@ test.describe('greenbone assignment', () => {
     await commonPage.logout();
     });
   });
+
+  test('Verify whether the user is not able to login with invalid credentials.', async ({loginPage}) => {
+    await loginPage.visitLoginPage();
+    await loginPage.login(Constants.INVALID_USERNAME, Constants.INVALID_PASSWORD);
+    await loginPage.verifyErrorMessage();
+  });
 });
